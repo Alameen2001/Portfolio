@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-color: #010712;
+  --secondary-color: #818386;
+  --bg-color: #FCFDFD;
+  --button-color: #3B3636;
+  --h1-color: #3F444C;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}   
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+}
+
+#intro {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5% 15%;
+    position: relative;
+}
+
+#intro h1 {
+    font-weight: 400;
+    font-size: 10rem;
+    line-height: 10rem;
+}
+
+.hello {
+    animation: slide-in-animation 1.5s ease-in-out forwards;
+}
+
+.my-name {
+    animation: slide-in-animation 2s ease-in-out forwards;
+}
+
+.my-description {
+    animation: slide-in-animation 2.3s ease-in-out forwards;
+}
+
+nav {
+    position: fixed;
+    top: 4%;
+    right: 15%;
+    word-spacing: 2rem;
+    scroll-behavior: smooth;
+    transition: .3s ease-in-out;
+    z-index: 99999;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background-color: black;
+    height: 1.5px;
+    width: 0;
+    transition: .3s all ease-in-out;
+}
+
+nav a:hover::after {
+    width: 45px;
+}
+
+.projects-container {
+    display: flex;
+    overflow: hidden;
+    width: 500%;
+}
+
+.project {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 4rem;
+    flex-shrink: 0;
+    padding: 6rem;
+}
+
+.project h2 {
+    margin-bottom: 1rem;
+}
+
+.project img {
+    width: 100%;
+}
+
+.text-up {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+#contact {
+    padding: 5rem;
+}
+
+label,
+.description {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 0.625rem;
+}
+
+form {
+    width: 31.25rem;
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+input,
+textarea,
+label {
+    width: 40vw;
+    display: block;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--primary-color);
+}
+
+input,
+textarea {
+    color: var(--primary-color);
+    font-weight: 500;
+    background: var(--bg-color);
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: 300;
+    background: var(--button-color);
+    color: var(--bg-color);
+    width: 10rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+input:hover,
+textarea:hover,
+button:hover {
+    opacity: 0.5;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+@keyframes slide-in-animation {
+	from {
+		opacity: 0;
+		transform: translateX(-200%);
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+/* Responsive Styles */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #intro {
+        padding: 10% 8%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+
+    #intro h1 {
+        font-size: 4rem;
+        line-height: normal;
+        margin-bottom: 2rem;
+    }
+
+    .my-description {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 2rem;
+        right: -1.5rem;
+        z-index: 100000;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: var(--primary-color);
+        margin: 6px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%; /* Slightly less than 100% to see it's an overlay */
+        height: 100vh;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        word-spacing: normal;
+        gap: 2rem;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 99999;
+    }
+    
+    #menu-toggle:checked ~ nav {
+        right: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    nav a {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    /* Project Section Mobile */
+    .projects-container {
+        display: block;
+        width: 100%;
+        overflow: visible;
+        padding-top: 4rem;
+    }
+
+    .project {
+        width: 100%;
+        height: auto;
+        padding: 3rem 1.5rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .project img {
+        order: -1;
+    }
+
+    /* Contact Section Mobile */
+    #contact {
+        padding: 3rem 1.5rem;
+    }
+
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input, textarea, label {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}

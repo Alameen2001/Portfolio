@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Ameen S - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="intro">
+        <div>
+            <h1>
+                <div class="hello">Hello,</div>
+                <div class="my-name">I'm AlAmeen S</div>
+            </h1>
+            <p class="my-description">I'm an aspiring AI/ML Engineer. Scroll down to view some of the projects I've done.</p>
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav>
+            <a href="#intro">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="https://github.com/Alameen2001 " target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/al-ameen-s-502aaa255/" target="_blank">LinkedIn</a>
+            <a href="resume/Al-Ameen_AI_ML_Resume.pdf" target="_blank">Resume</a>
+            <a href="#contact">Contact</a>
+           
+        </nav>
+    </section>
+
+    <section class="projects-container" id="projects">
+        <div class="project">
+            <div class="project-content">
+                <h2>Resume Matcher</h2>
+
+                <p>Designed an AI-powered resume analysis system that evaluates resumes against job descriptions using semantic similarity and embedding-based scoring, identifying skill gaps and enhancing content using LLMs.</p>
+                <br>    
+                <p>Generated ATS-friendly resumes with improved content quality and automated PDF export functionality for seamless user experience</p>
+                <br>
+                <p>Technologies - <i>Python, Scikit-learn, NLTK, Streamlit, NumPy</i></p>
+            </div>
+
+            <img src="/projects/AI-res.png" alt="">
+        </div>
+
+        <div class="project">            
+            <div class="project-content">
+                <h2>Medical Document Summarizer & Chatbot</h2>
+
+                <p>Built a Medical Document Summarizer that allows users to upload medical reports and automatically generates concise, easy-to-understand summaries using a pre-trained language model.</p>
+                <br>
+                <p> Integrated an interactive chatbot for follow-up questions and added support for connecting users with real medical professionals for further clarification when needed</p>
+                <br>
+                <p>Technologies - <i>Python, LLMs, Flask</i></p>
+            </div>
+
+            <img src="/projects/mds.png" alt="">
+        </div>
+
+        <div class="project">            
+            <div class="project-content">
+                <h2>Image Forgery Detection</h2>
+
+                <p>Developed an Image Forgery Detection system that analyzes uploaded images to identify potential manipulations and inconsistencies using deep learning-based feature extraction.</p>
+                <br>
+                <p>Implemented a user interface that highlights tampered regions and provides a clear authenticity report to help users verify image integrity.</p>
+                <br>
+                <p>Technologies - <i>Python, Deep Learning, CNN, OpenCV </i></p>
+            </div>
+
+            <img src="/projects/imgforgery.png" alt="">
+        </div>
+
+        <div class="project">                      
+            <div class="project-content">
+                <h2>Machine Learning & Time Series Projects </h2>
+
+                 <p>Developed machine learning models for a Real Estate Price Predictor, enabling accurate estimation of property prices based on key market features and data-driven insights, along with additional models for sentiment analysis, air quality index classification, and breast cancer prediction using supervised learning algorithms such as KNN, Decision Trees, and Random Forest.</p>
+                <br>
+                <p>Built a time series forecasting model using LSTM with data preprocessing, feature engineering, and visualization in Jupyter Notebook to analyze trends and derive meaningful insights.</p>
+                <br>
+                <p>Technologies - <i>Python, Pandas, NumPy, Scikit-learn, Matplotlib</i></p>
+            </div>
+
+            <img src="/projects/ml.png" alt="">
+        </div>
+
+        <div class="project">            
+            <div class="project-content">
+                <h2>Skill Stack Tracker - AI</h2>
+
+                <p>Developed a full-stack Skill Stack Tracker web application using Python, Flask, React, and Tailwind, enabling users to log, track, and visualize their technical skills and learning progress efficiently.</p>
+                <br>
+                <p>Integrated RESTful APIs with secure authentication, interactive dashboards, and Gemini API-based AI insights to generate personalized skill summaries and analytics for improved learning outcomes</p>
+                <br>
+                <p>Technologies - <i>Python, Flask, React, HTML, CSS, Tailwind, JavaScript, Gemini API</i></p>
+            </div>
+
+            <img src="/projects/skill.png" alt="">
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <h2>Wanna connect? Drop me a text and I'll be happy to say hi.</h2>
+
+        <form id="contact-form" target="_blank" action="https://formsubmit.co/alameensigning@gmail.com" method="POST">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+            <label for="message">Message</label>
+            <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+            <button type="submit" id="submit" name="submit">Send</button>
+        </form>
+        <div id="error"></div>
+        <div id="success-msg"></div>
+    </section>
+
+
+
+    <!-- GSAP FOR SCROLL ANIMATIONS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
